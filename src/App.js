@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import { View } from './components/View';
 
-// getting the values of local storage
+
 const getDatafromLS=()=>{
   const data = localStorage.getItem('complaint');
   if(data){
@@ -14,7 +14,7 @@ const getDatafromLS=()=>{
 
 export const App = () => {
 
-  // main array of objects state || books state || books array of objects
+  
   const [booking, setBooking]=useState(getDatafromLS());
 
   // input field states
@@ -22,10 +22,10 @@ export const App = () => {
   const [reason, setReason]=useState('');
   const [num, setNum]=useState('');
 
-  // form submit event
+
   const handleAddBookSubmit=(e)=>{
     e.preventDefault();
-    // creating an object
+    
     let book={
       num,
       title,
@@ -38,7 +38,7 @@ export const App = () => {
     setNum('')
   }
 
-  // delete book from LS
+  
   const deleteBook=(num)=>{
    
     const filteredBooks=booking.filter((element,index)=>{
@@ -63,7 +63,7 @@ export const App = () => {
         <div className='form-container'>
           <form autoComplete="off" className='form-group'
           onSubmit={handleAddBookSubmit}>
-            <label >Title</label>
+            <label >No</label>
             <input type="number" className='form-control' required
             onChange={(e)=>setNum(e.target.value)} value={num}></input>
            
