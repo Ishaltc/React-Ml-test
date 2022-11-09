@@ -64,7 +64,7 @@ export const App = () => {
           <form autoComplete="off" className='form-group'
           onSubmit={handleAddBookSubmit}>
             <label  >No</label>
-            <input type="number"  className='form-control' required
+            <input type="number" min={1}  className='form-control' required
             onChange={(e)=>setNum(e.target.value)} value={num}></input>
            
             <label>Title</label>
